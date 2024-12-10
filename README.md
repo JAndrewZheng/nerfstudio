@@ -1,7 +1,6 @@
 # Quickstart
 
-The quickstart will help you get started with the default vanilla NeRF trained on the classic Blender Lego scene.
-For more complex changes (e.g., running with your own data/setting up a new NeRF graph), please refer to our [references](#learn-more).
+The following steps will allow you to reproduce the steps I have taken on this final project. All of these steps were performed on the nexus cluster of UMD.
 
 ## 1. Installation: Setup the environment
 
@@ -11,10 +10,8 @@ You must have an NVIDIA video card with CUDA installed on the system. This libra
 
 ### Create environment
 
-Nerfstudio requires `python >= 3.8`. We recommend using conda to manage dependencies. Make sure to install [Conda](https://docs.conda.io/miniconda.html) before proceeding.
-
 ```bash
-conda create --name nerfstudio -y python=3.8
+conda create --name nerfstudio -y python=3.11
 conda activate nerfstudio
 pip install --upgrade pip
 ```
@@ -38,14 +35,6 @@ in the Installation documentation for more.
 
 ### Installing nerfstudio
 
-Easy option:
-
-```bash
-pip install nerfstudio
-```
-
-**OR** if you want the latest and greatest:
-
 ```bash
 git clone https://github.com/nerfstudio-project/nerfstudio.git
 cd nerfstudio
@@ -53,9 +42,7 @@ pip install --upgrade pip setuptools
 pip install -e .
 ```
 
-**OR** if you want to skip all installation steps and directly start using nerfstudio, use the docker image:
-
-See [Installation](https://github.com/nerfstudio-project/nerfstudio/blob/main/docs/quickstart/installation.md) - **Use docker image**.
+This way, we can make edits to the code. 
 
 ## 2. Training your first model!
 
@@ -64,9 +51,16 @@ The following will train a _nerfacto_ model, our recommended model for real worl
 ```bash
 # Download some test data:
 ns-download-data nerfstudio --capture-name=poster
+ns-download-data nerfstudio --capture-name=floating-tree
+ns-download-data nerfstudio --capture-name=person
+ns-download-data nerfstudio --capture-name=Egypt
+
 # Train model
-ns-train nerfacto --data data/nerfstudio/poster
 ```
+
+# Training Model
+
+You can find commands used to train the models in the jobs folder.
 
 If everything works, you should see training progress like the following:
 
@@ -237,27 +231,4 @@ We provide the following support structures to make life easier for getting star
 
 # Citation
 
-You can find a paper writeup of the framework on [arXiv](https://arxiv.org/abs/2302.04264).
-
-If you use this library or find the documentation useful for your research, please consider citing:
-
-```
-@inproceedings{nerfstudio,
-	title        = {Nerfstudio: A Modular Framework for Neural Radiance Field Development},
-	author       = {
-		Tancik, Matthew and Weber, Ethan and Ng, Evonne and Li, Ruilong and Yi, Brent
-		and Kerr, Justin and Wang, Terrance and Kristoffersen, Alexander and Austin,
-		Jake and Salahi, Kamyar and Ahuja, Abhik and McAllister, David and Kanazawa,
-		Angjoo
-	},
-	year         = 2023,
-	booktitle    = {ACM SIGGRAPH 2023 Conference Proceedings},
-	series       = {SIGGRAPH '23}
-}
-```
-
-# Contributors
-
-<a href="https://github.com/nerfstudio-project/nerfstudio/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=nerfstudio-project/nerfstudio" />
-</a>
+The work I have done has been done on top of the <a href="https://github.com/microsoft/MoGe/tree/main">nerfstudio<\a> repository and the <a href="https://github.com/microsoft/MoGe/tree/main">MoGe<\a> repository, of which I just merged methods to produce better results. 
