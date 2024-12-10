@@ -231,4 +231,4 @@ We provide the following support structures to make life easier for getting star
 
 # Citation
 
-The work I have done has been done on top of the <a href="https://github.com/microsoft/MoGe/tree/main">nerfstudio</a> repository and the <a href="https://github.com/microsoft/MoGe/tree/main">MoGe</a> repository, of which I just merged methods to produce better results. 
+The work I have done has been done on top of the <a href="https://github.com/nerfstudio-project/nerfstudio/">nerfstudio</a> repository and the <a href="https://github.com/microsoft/MoGe/tree/main">MoGe</a> repository, of which I just merged methods to produce better results. 
